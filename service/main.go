@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/C-Anirudh/chuck/service/contollers"
+	"github.com/C-Anirudh/chuck/service/controllers"
 	"github.com/gorilla/mux"
 )
 
@@ -18,8 +18,8 @@ func main() {
 	r := mux.NewRouter()
 
 	// TODO: Add routing
-	r.HandleFunc("/login", contollers.LoginHandler).Methods("POST")
-	r.HandleFunc("/signup", contollers.SignupHandler).Methods("POST")
+	r.HandleFunc("/login", controllers.LoginHandler).Methods("POST")
+	r.HandleFunc("/signup", controllers.SignupHandler).Methods("POST")
 
 	log.Fatal(http.ListenAndServe(":9000", r))
 }

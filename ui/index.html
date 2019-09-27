@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html data-ng-app="chuck">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Chuck</title>
+
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <script src="/js/jquery-3.2.1.min.js">
+        </script>
+        <script src="/js/bootstrap.bundle.js">
+        </script>
+
+        <script src="/js/angular.min.js">
+        </script>
+        <script src="/js/angular-route.js">
+        </script>
+        <script src="./app.js">
+        </script>
+
+        <header data-ng-include="'html_components/header.html'"></header>
+              
+        <div ng-view></div>
+
+        <div data-ng-include="'html_components/footer.html'"></div>
+    </body>
+</html>

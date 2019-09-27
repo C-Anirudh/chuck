@@ -1,51 +1,62 @@
-html, body {
-    height: 100%;
-}
-body {
-    padding: 0;
-    margin: 0;
-}
-
-.page-header { 
-    background: url("../img/background.jpg")no-repeat;
-    position: relative;
-    background-size: auto;
-}
-.page-caption {
-    padding-top: 170px; 
-    padding-bottom: 174px;
-}
-.page-title { 
-    font-size: 75px; 
-    line-height: 1; 
-    color: #fff; 
-    font-weight: 600; 
-    text-align: center; 
-}
-
-.column {
-    float: left;
-    padding: 10px;
-    height: 300px;
-}
-
-.left {
-    width: 65vh;
-}
-  
-.right {
-    width: 35vh;
-}
-  
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
 img {
     height: 200px;
     width: 200px;
-    object-fit: cover;
+    object-fit: scale-down;
+    padding-bottom: 20px;
+}
+
+.card {
+    padding: 10px;
+    margin: 10px;
+    margin-top: 100px;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 20px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+
+.fa-github {
+    color: white;
+}
+
+div.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.card-title {
+    color: black;
+    font-weight: 800;
+}
+
+.typewriter {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .20em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0% }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    100% { border-color: white; }
+  }
+
+.img-404 {
+      object-fit: cover;
 }

@@ -36,7 +36,7 @@ app.controller('formController', function($scope, $http, $location) {
     console.warn("Form Controller called.");
 
     $scope.handleLogin = function() {
-        let data = 'email=' + $scope.user.email + '&password=' + $scope.user.password;
+        let data = 'email=' + $scope.email + '&password=' + $scope.password;
         console.log('data is', data);
         $http({
             url: global.url + '/login',
@@ -57,7 +57,7 @@ app.controller('formController', function($scope, $http, $location) {
     }
 
     $scope.handleSignup = function() {
-        let data = 'name=' + $scope.newuser.name + '&email=' + $scope.newuser.email + '&password=' + $scope.newuser.password;
+        let data = 'name=' + $scope.newUserName + '&email=' + $scope.newUserEmail + '&password=' + $scope.newUserPassword;
         console.log('data is', data);
         $http({
             url: global.url + '/signup',

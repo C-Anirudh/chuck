@@ -1,0 +1,21 @@
+{
+    "name": "chuck",
+    "version": "1.0.0",
+    "description": "To Do and personal diary",
+    "main": "main.js",
+    "scripts": {
+      "test": "npm test",
+      "start": "http-server ui/"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/C-Anirudh/chuck.git"
+    },
+    "author": "TechFlyte",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/C-Anirudh/chuck/issues"
+    },
+    "homepage": "https://github.com/C-Anirudh/chuck#readme"
+}
+  

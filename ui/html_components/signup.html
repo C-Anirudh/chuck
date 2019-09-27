@@ -1,0 +1,50 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Chuck</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#!">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#!about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#!contact">Contact</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <a href="https://www.github.com/C-Anirudh/chuck"><i class="fa fa-github"></i></a>
+        <ul>
+    </div>
+</nav>
+
+<div class="card">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Sign Up</h3> 
+        </div>
+        <div class="panel-body">
+            <form action="/signup" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Your full name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    Sign Up
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

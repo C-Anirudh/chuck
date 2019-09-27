@@ -11,6 +11,12 @@ app.config(function($routeProvider) {
         .when("/about", {
             templateUrl: 'html_components/about.html'
         })
+        .when("/login", {
+            templateUrl: 'html_components/login.html'
+        })
+        .when("/signup", {
+            templateUrl: 'html_components/signup.html'
+        })
         .otherwise({
             templateUrl: 'html_components/error404.html'
         })

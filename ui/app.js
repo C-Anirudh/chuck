@@ -21,7 +21,7 @@ app.config(function($routeProvider) {
         })
         .when("/signup", {
             templateUrl: 'html_components/user/signup.html',
-            controller: 'formContoller',
+            controller: 'formController',
         })
         .when("/dashboard", {
             templateUrl: 'html_components/user/dashboard.html',
@@ -51,7 +51,28 @@ app.controller('formController', function($scope, $http, $location) {
             if (res) {
                 $location.path('/dashboard');
             } else {
-                $scope.error = 'Error occurred';
+                $scope.error = 'Unable to log in';
+            }
+        });
+    }
+
+    $scope.handleSignup = function() {
+        let data = 'name=' + $scope.newuser.name + '&email=' + $scope.newuser.email + '&password=' + $scope.newuser.password;
+        console.log('data is', data);
+        $http({
+            url: global.url + '/signup',
+            method: 'POST',
+            headers: {
+                'Content-Type': "application/x-www-form-urlencoded"
+            },
+            data: data
+        }).then(resp => {
+            let res = resp.data;
+            console.log('res is', res)
+            if (res) {
+                $location.path('/login');
+            } else {
+                $scope.error = 'Unable to Sign Up';
             }
         });
     }

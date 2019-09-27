@@ -19,7 +19,16 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 	// prevent CORS error
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-	w.Write([]byte("present"))
+	w.Write([]byte("true"))
+}
+
+func signupHandler(w http.ResponseWriter, r *http.Request) {
+	log.Println("In signup handler")
+
+	// prevent CORS error
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	w.Write([]byte("true"))
 }
 
 func main() {
@@ -27,6 +36,7 @@ func main() {
 
 	// TODO: Add routing
 	r.HandleFunc("/login", loginHandler).Methods("POST")
+	r.HandleFunc("/signup", signupHandler).Methods("POST")
 
 	log.Fatal(http.ListenAndServe(":9000", r))
 }

@@ -1,11 +1,21 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
 	"github.com/C-Anirudh/chuck/service/controllers"
+	"github.com/C-Anirudh/chuck/service/models"
 	"github.com/gorilla/mux"
+)
+
+const (
+	host     = "localhost"
+	port     = 5432
+	user     = "postgres"
+	password = "ani15162"
+	dbname   = "chuck"
 )
 
 func init() {
@@ -15,11 +25,20 @@ func init() {
 }
 
 func main() {
+	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
+	us, err := models.NewUserService(psqlInfo)
+	if err != nil {
+		panic(err)
+	}
+	defer us.Close()
+	us.AutoMigrate()
+
+	usersC := controllers.NewUsers(us)
+
 	r := mux.NewRouter()
 
-	// TODO: Add routing
-	r.HandleFunc("/login", controllers.LoginHandler).Methods("POST")
-	r.HandleFunc("/signup", controllers.SignupHandler).Methods("POST")
+	r.HandleFunc("/login", usersC.Login).Methods("POST")
+	r.HandleFunc("/signup", usersC.Signup).Methods("POST")
 
 	log.Fatal(http.ListenAndServe(":9000", r))
 }

@@ -2,6 +2,7 @@ package models
 
 import (
 	"errors"
+	"log"
 	"regexp"
 	"strings"
 
@@ -232,6 +233,7 @@ func (ug *userGorm) AutoMigrate() error {
 
 // Validation code for Create
 func (uv *userValidator) Create(user *User) error {
+	log.Println("In Create Validator")
 	err := runUserValFns(user,
 		uv.passwordRequired,
 		uv.passwordMinLength,
@@ -324,9 +326,6 @@ func (uv *userValidator) emailIsAvail(user *User) error {
 }
 
 func (uv *userValidator) passwordMinLength(user *User) error {
-	if user.Password == "" {
-		return nil
-	}
 	if len(user.Password) < 8 {
 		return ErrPasswordTooShort
 	}

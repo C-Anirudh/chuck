@@ -48,15 +48,24 @@ app.controller('formController', function($scope, $http, $location) {
         }).then(resp => {
             let res = resp.data;
             console.log('res is ', res)
-            if (res) {
+            if (res == 'true') {
                 $location.path('/dashboard');
             } else {
-                $scope.error = 'Unable to log in';
+                $scope.error = res;
             }
         });
     }
 
     $scope.handleSignup = function() {
+        if ($scope.newUserName == undefined ) {
+            $scope.newUserName = '';
+        }
+        if ($scope.newUserEmail == undefined ) {
+            $scope.newUserEmail = '';
+        }
+        if ($scope.newUserPassword == undefined ) {
+            $scope.newUserPassword = '';
+        }
         let data = 'name=' + $scope.newUserName + '&email=' + $scope.newUserEmail + '&password=' + $scope.newUserPassword;
         console.log('data is', data);
         $http({
@@ -69,10 +78,10 @@ app.controller('formController', function($scope, $http, $location) {
         }).then(resp => {
             let res = resp.data;
             console.log('res is', res)
-            if (res) {
+            if (res == 'true') {
                 $location.path('/login');
             } else {
-                $scope.error = 'Unable to Sign Up';
+                $scope.error = res;
             }
         });
     }

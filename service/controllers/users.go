@@ -57,6 +57,7 @@ func (u *Users) Signup(w http.ResponseWriter, r *http.Request) {
 	if err := parseForm(r, &form); err != nil {
 		log.Println(err)
 		fmt.Println(w, err)
+		return
 	}
 	user := models.User{
 		Name:     form.Name,
@@ -66,9 +67,11 @@ func (u *Users) Signup(w http.ResponseWriter, r *http.Request) {
 
 	if err := u.us.Create(&user); err != nil {
 		log.Println(err)
-		fmt.Println(w, err)
+		w.Write([]byte(err.Error()))
+		return
 	}
 	w.Write([]byte("true"))
+
 }
 
 // Users will hold the user service

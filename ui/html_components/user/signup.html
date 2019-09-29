@@ -31,15 +31,15 @@
             <form name="signupForm">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Your full name" ng-model="newUserName">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Your full name" ng-model="newUserName" ng-model-options="{ allowInvalid: true }">
                 </div>
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="newUserEmail">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="newUserEmail" ng-model-options="{ allowInvalid: true }">
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" ng-model="newUserPassword">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" ng-model="newUserPassword" ng-model-options="{ allowInvalid: true }">
                 </div>
                 <button type="submit" class="btn btn-primary" data-ng-click="handleSignup()">
                     Sign Up

@@ -51,6 +51,8 @@ app.controller('formController', function($scope, $http, $location) {
             if (res == 'true') {
                 $location.path('/dashboard');
             } else {
+                var element = document.getElementById("alert");
+                element.classList.add("alert");
                 $scope.error = res;
             }
         });
@@ -81,6 +83,8 @@ app.controller('formController', function($scope, $http, $location) {
             if (res == 'true') {
                 $location.path('/login');
             } else {
+                var element = document.getElementById("alert");
+                element.classList.add("alert");
                 $scope.error = res;
             }
         });

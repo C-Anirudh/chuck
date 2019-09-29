@@ -26,6 +26,10 @@ and your Go server by running the following command in your `service` folder
 go run main.go
 ```
 
+> Navigate to **http://localhost:8080/#!/** in your browser to see the application.
+
+> **Tip**: Changes to the html, css and js files may not reflect immediately in the browser because of caching. It is advisable to install a browser extension that clears the cache for you.
+
 ## :wrench: Technology Stack
 * **Backend** Go
 * **Front-end** AngularJS

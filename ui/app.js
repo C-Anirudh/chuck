@@ -4,7 +4,7 @@ var global = {
     url: 'http://0.0.0.0:9000'
 };
 
-app.config(function($routeProvider) {
+app.config(function ($routeProvider) {
     $routeProvider
         .when("/", {
             templateUrl: 'html_components/home.html'
@@ -32,10 +32,10 @@ app.config(function($routeProvider) {
         })
 });
 
-app.controller('formController', function($scope, $http, $location) {
+app.controller('formController', function ($scope, $http, $location) {
     console.warn("Form Controller called.");
 
-    $scope.handleLogin = function() {
+    $scope.handleLogin = function () {
         let data = 'email=' + $scope.email + '&password=' + $scope.password;
         console.log('data is', data);
         $http({
@@ -53,19 +53,22 @@ app.controller('formController', function($scope, $http, $location) {
             } else {
                 var element = document.getElementById("alert");
                 element.classList.add("alert");
+                setTimeout(() => {
+                    element.classList.remove("alert");
+                }, 4000);
                 $scope.error = res;
             }
         });
     }
 
-    $scope.handleSignup = function() {
-        if ($scope.newUserName == undefined ) {
+    $scope.handleSignup = function () {
+        if ($scope.newUserName == undefined) {
             $scope.newUserName = '';
         }
-        if ($scope.newUserEmail == undefined ) {
+        if ($scope.newUserEmail == undefined) {
             $scope.newUserEmail = '';
         }
-        if ($scope.newUserPassword == undefined ) {
+        if ($scope.newUserPassword == undefined) {
             $scope.newUserPassword = '';
         }
         let data = 'name=' + $scope.newUserName + '&email=' + $scope.newUserEmail + '&password=' + $scope.newUserPassword;
@@ -85,6 +88,9 @@ app.controller('formController', function($scope, $http, $location) {
             } else {
                 var element = document.getElementById("alert");
                 element.classList.add("alert");
+                setTimeout(() => {
+                    element.classList.remove("alert");
+                }, 4000);
                 $scope.error = res;
             }
         });

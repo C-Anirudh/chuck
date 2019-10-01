@@ -37,6 +37,9 @@ var (
 
 	// ErrPasswordRequired is a custom error we return when user tries to create an account without setting a password
 	ErrPasswordRequired = errors.New("models: password is required")
+
+	// ErrNameRequired is a custom error we return when user tries to create an account without setting a name
+	ErrNameRequired = errors.New("models: Name is required")
 )
 
 const (
@@ -46,7 +49,7 @@ const (
 // User is the database model for our customer
 type User struct {
 	gorm.Model
-	Name         string
+	Name         string `gorm:"not null"`
 	Email        string `gorm:"not null;unique_index"`
 	Password     string `gorm:"-"`
 	PasswordHash string `gorm:"not null"`
@@ -235,11 +238,12 @@ func (ug *userGorm) AutoMigrate() error {
 func (uv *userValidator) Create(user *User) error {
 	log.Println("In Create Validator")
 	err := runUserValFns(user,
+		uv.requireName,
+		uv.requireEmail,
 		uv.passwordRequired,
 		uv.passwordMinLength,
 		uv.bcryptPassword,
 		uv.passwordHashRequired,
-		uv.requireEmail,
 		uv.normalizeEmail,
 		uv.emailFormat,
 		uv.emailIsAvail)
@@ -321,6 +325,13 @@ func (uv *userValidator) emailIsAvail(user *User) error {
 	}
 	if user.ID != existing.ID {
 		return ErrEmailTaken
+	}
+	return nil
+}
+
+func (uv *userValidator) requireName(user *User) error {
+	if user.Name == "" {
+		return ErrNameRequired
 	}
 	return nil
 }

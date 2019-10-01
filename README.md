@@ -1,6 +1,6 @@
 # chuck
 
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/C-Anirudh/chuck/graphs/commit-activity) [![GitHub license](https://img.shields.io/github/license/C-Anirudh/chuck.svg)](https://github.com/C-Anirudh/chuck/blob/master/LICENSE) [![GitHub contributors](https://img.shields.io/github/contributors/C-Anirudh/chuck.svg)](https://GitHub.com/C-Anirudh/chuck/graphs/contributors/) [![HitCount](http://hits.dwyl.io/C-Anirudh/chuck.svg)](http://hits.dwyl.io/C-Anirudh/chuck)
+[![Gitter](https://badges.gitter.im/chuck-project/community.svg)](https://gitter.im/chuck-project/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/C-Anirudh/chuck/graphs/commit-activity) [![GitHub license](https://img.shields.io/github/license/C-Anirudh/chuck.svg)](https://github.com/C-Anirudh/chuck/blob/master/LICENSE) [![GitHub contributors](https://img.shields.io/github/contributors/C-Anirudh/chuck.svg)](https://GitHub.com/C-Anirudh/chuck/graphs/contributors/) [![HitCount](http://hits.dwyl.io/C-Anirudh/chuck.svg)](http://hits.dwyl.io/C-Anirudh/chuck)
 
 [![GitHub stars](https://img.shields.io/github/stars/C-Anirudh/chuck.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/C-Anirudh/chuck/stargazers/) [![GitHub forks](https://img.shields.io/github/forks/C-Anirudh/chuck.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/C-Anirudh/chuck/network/) [![GitHub watchers](https://img.shields.io/github/watchers/C-Anirudh/chuck.svg?style=social&label=Watch&maxAge=2592000)](https://GitHub.com/C-Anirudh/chuck/watchers/)
 
@@ -76,3 +76,7 @@ Add the name of the database and your db password to the const variables provide
 
 * **Backend** Go
 * **Front-end** AngularJS
+
+## Contributing
+
+Refer [CONTRIBUTING.md](https://github.com/C-Anirudh/chuck/blob/master/CONTRIBUTING.md) for instructions on how to contribute to the project.

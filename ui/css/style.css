@@ -62,3 +62,8 @@ div.card.pages {
   display:flex;
   align-items:center;
 }
+
+.card.card-login-and-register {
+  max-width: 315px;
+  margin: 100px auto 10px auto;
+}

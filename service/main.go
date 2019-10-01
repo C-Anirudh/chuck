@@ -14,8 +14,8 @@ const (
 	host     = "localhost"
 	port     = 5432
 	user     = "postgres"
-	password = "ani15162"
-	dbname   = "chuck"
+	password = ""
+	dbname   = ""
 )
 
 func init() {

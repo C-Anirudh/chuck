@@ -5,7 +5,7 @@ To Do and personal planner.
 You must have [Go](https://golang.org/) and [npm](https://www.npmjs.com/) installed in your computer. Then follow these steps:
 
 ```
-go get github.com/TechFlyte/shiken
+go get github.com/C-Anirudh/chuck
 ```
 
 Install all Go dependencies by running

@@ -25,7 +25,7 @@ app.config(function ($routeProvider) {
       controller: 'formController'
     })
     .when('/dashboard', {
-      templateUrl: 'html_components/user/dashboard.html',
+      templateUrl: 'html_components/logged_in/dashboard.html',
       controller: ''
     })
     .otherwise({

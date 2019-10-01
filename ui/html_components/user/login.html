@@ -22,22 +22,22 @@
     </div>
 </nav>
 
-<div class="card pages">
+<div class="card pages card-login-and-register">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h3 class="panel-title">Log In</h3> 
+            <h3 class="panel-title mt-3">Log In</h3> 
         </div>
-        <div class="panel-body">
+        <div class="panel-body text-left">
             <form name="loginForm">
                 <div class="form-group">
-                    <label for="email">Email address</label>
+                    <label for="email" class="mb-1 mt-4">Email address</label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="email">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <label for="password" class="mb-1">Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password" ng-model="password">
                 </div>
-                <button type="submit" class="btn btn-primary" data-ng-click="handleLogin()">
+                <button type="submit" class="btn btn-primary w-100 mt-3" data-ng-click="handleLogin()">
                     Log In
                 </button>
 

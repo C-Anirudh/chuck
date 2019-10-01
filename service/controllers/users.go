@@ -74,6 +74,28 @@ func (u *Users) Signup(w http.ResponseWriter, r *http.Request) {
 
 }
 
+// CookieTest will return true if rememberHash in the cookie is valid, otherwise will return false
+func (u *Users) CookieTest(w http.ResponseWriter, r *http.Request) {
+	log.Println("In CookieTest handler")
+
+	// prevent CORS error
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+
+	var form CookieTestForm
+	if err := parseForm(r, &form); err != nil {
+		log.Println(err)
+		fmt.Println(w, err)
+		return
+	}
+	_, err := u.us.ByRemember(form.token)
+	if err != nil {
+		w.Write([]byte("false"))
+	} else {
+		w.Write([]byte("true"))
+	}
+}
+
 // Users will hold the user service
 type Users struct {
 	us models.UserService
@@ -90,4 +112,9 @@ type SignupForm struct {
 type LoginForm struct {
 	Email    string `schema:"email"`
 	Password string `schema:"password"`
+}
+
+// CookieTestForm contains the cookie value
+type CookieTestForm struct {
+	token string `schema:"remember_token"`
 }

@@ -39,6 +39,7 @@ func main() {
 
 	r.HandleFunc("/login", usersC.Login).Methods("POST")
 	r.HandleFunc("/signup", usersC.Signup).Methods("POST")
+	r.HandleFunc("/cookietest", usersC.CookieTest).Methods("POST")
 
 	log.Fatal(http.ListenAndServe(":9000", r))
 }

@@ -76,6 +76,7 @@ Add the name of the database and your db password to the const variables provide
 
 * **Backend** Go
 * **Front-end** AngularJS
+* **Database** PostgreSQL
 
 ## Contributing
 
